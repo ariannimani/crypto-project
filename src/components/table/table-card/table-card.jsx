@@ -2,7 +2,7 @@ import React from "react";
 import TableItem from "../table-item/table-item.component";
 import TableRows from "../table-rows/table-rows.component";
 
-export default function TableCard({ data }) {
+export default function TableCard({ data, searchValue }) {
   return (
     <div className="row">
       <div className="col-12">
@@ -16,7 +16,13 @@ export default function TableCard({ data }) {
                 <TableItem />
                 <tbody>
                   {data.map((data) => {
-                    return <TableRows key={data._id} data={data} />;
+                    return (
+                      <TableRows
+                        key={data._id}
+                        data={data}
+                        searchValue={searchValue}
+                      />
+                    );
                   })}
                 </tbody>
               </table>
