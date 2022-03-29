@@ -38,21 +38,33 @@ export default function Dashboard() {
               exact
               path="/"
               element={
-                <TableCard data={dataBinance} searchValue={searchValue} />
+                <TableCard
+                  data={dataBinance}
+                  title="Binance Coins"
+                  searchValue={searchValue}
+                />
               }
             />
             <Route
               exact
               path="/binance"
               element={
-                <TableCard data={dataBinance} searchValue={searchValue} />
+                <TableCard
+                  data={dataBinance}
+                  title="Binance Coins"
+                  searchValue={searchValue}
+                />
               }
             />
             <Route
               exact
               path="/kucoin"
               element={
-                <TableCard data={dataKuCoin} searchValue={searchValue} />
+                <TableCard
+                  data={dataKuCoin}
+                  title="Kucoin Coins"
+                  searchValue={searchValue}
+                />
               }
             />
           </Routes>
