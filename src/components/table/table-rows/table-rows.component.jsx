@@ -2,8 +2,10 @@ import React from "react";
 
 export default function TableRows({ data, searchValue }) {
   return data
-    .filter((coin) =>
-      coin.name.toLowerCase().match(new RegExp(searchValue, "i"))
+    .filter(
+      (coin) =>
+        coin.name.toLowerCase().match(new RegExp(searchValue, "i")) ||
+        coin.short_name.toLowerCase().match(new RegExp(searchValue, "i"))
     )
     .map((coins) => (
       <tr key={coins._id}>
