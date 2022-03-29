@@ -13,17 +13,13 @@ const SideBar = () => {
           aria-hidden="true"
           id="iconSidenav"
         ></i>
-        <a
-          className="navbar-brand m-0"
-          href=" https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html "
-          target="_blank"
-        >
+        <a className="navbar-brand m-0" href="./" target="_blank">
           <img
-            src="../assets/img/logo-ct.png"
+            src={require("../../assets/img/logo-ct.png")}
             className="navbar-brand-img h-100"
             alt="main_logo"
           />
-          <span className="ms-1 font-weight-bold">Soft UI Dashboard</span>
+          <span className="ms-1 font-weight-bold">prRush - Crypto</span>
         </a>
       </div>
       <hr className="horizontal dark mt-0" />
