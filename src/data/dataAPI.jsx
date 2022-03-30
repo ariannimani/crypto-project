@@ -11,6 +11,7 @@ export const DataProvider = ({ children }) => {
   const [dataBinance, setDataBinance] = useState([]);
   const [dataKuCoin, setDataKuCoin] = useState([]);
   const [searchValue, setSearchValue] = useState("");
+  const [dateDropdown, setDateDropdown] = useState([]);
 
   const urlLink = "https://crypto-scrapper--app.herokuapp.com/crypto/today";
 
@@ -54,7 +55,18 @@ export const DataProvider = ({ children }) => {
     setSearchValue(event.target.value);
   };
 
-  const value = { data, dataBinance, dataKuCoin, searchValue, handleChange };
+  const handleChangeDropdown = (event) => {
+    setDateDropdown(event.target.value);
+  };
+
+  const value = {
+    data,
+    dataBinance,
+    dataKuCoin,
+    searchValue,
+    handleChange,
+    handleChangeDropdown,
+  };
 
   return <DataContext.Provider value={value}>{children}</DataContext.Provider>;
 };

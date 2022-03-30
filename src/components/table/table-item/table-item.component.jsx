@@ -1,4 +1,5 @@
 import React from "react";
+import "./table-item.styles.css";
 
 export default function TableItem() {
   return (
@@ -10,15 +11,15 @@ export default function TableItem() {
         <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
           Price
         </th>
-        <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+        <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 tablet-hidden mobile-hidden">
           Rank
         </th>
 
         <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-          Percentage Today
+          Today
         </th>
         <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-          Percentage 7 Days
+          7 Days
         </th>
         <th className="text-secondary opacity-7"></th>
       </tr>

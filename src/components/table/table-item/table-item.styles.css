@@ -1,0 +1,22 @@
+@media screen and (min-width: 401px) and (max-width: 1024px) {
+  .tablet-hidden {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .mobile-hidden {
+    display: none;
+    margin: auto;
+  }
+  /*.px-2 {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .align-middle {
+    vertical-align: left !important;
+  }
+  .text-center {
+    text-align: left !important;
+  }*/
+}
