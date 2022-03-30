@@ -14,21 +14,27 @@ export default function TableRows({ data, searchValue }) {
           <div className="d-flex px-2 py-1">
             <div className="mobile-hidden">
               <img
-                src="../assets/img/team-4.jpg"
+                src="./"
+                //src={require(coins.img.substring(0, coins.img.indexOf("?")))}
                 className="avatar avatar-sm me-3"
-                alt="user6"
+                alt={coins.short_name}
               />
             </div>
             <div className="d-flex flex-column justify-content-center ">
-              <h6 className="mb-0 text-sm mobile-hidden">{coins.name}</h6>
-              <p className="text-xs text-secondary mb-0">{coins.short_name}</p>
+              <a href={coins.url} target="_blank" rel="noreferrer">
+                <h6 className="mb-0 text-sm mobile-hidden">{coins.name}</h6>
+                <p className="text-xs text-secondary mb-0">
+                  {coins.short_name}
+                </p>
+              </a>
             </div>
           </div>
         </td>
         <td>
           <p className="text-xs font-weight-bold mb-0">
             {window.innerWidth < 401
-              ? Math.round(coins.current_price.replace("$", "") * 100) / 100
+              ? "$" +
+                Math.round(coins.current_price.replace("$", "") * 100) / 100
               : coins.current_price}
           </p>
         </td>

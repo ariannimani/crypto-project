@@ -3,27 +3,26 @@ import "./filter-dropdown.styles.css";
 import { DataContext } from "../../data/dataAPI";
 
 export default function FilterDropDownBtn() {
-  const { data, handleDropdownChange } = useContext(DataContext);
-  const dates = data.map((date) => {
-    const d = new Date(date.created_at);
-    return `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()} ${
-      d.getHours() + 1
-    }:${d.getMinutes()}:${d.getSeconds()} CET`;
-  });
+  const { data, handleChangeDropdown, dateDropdown } = useContext(DataContext);
+  //const dates = data.map((date) => {
+  //  const d = new Date(date.created_at);
+  //  return `${d.getDate()}/${
+  //    d.getMonth() + 1
+  //  }/${d.getFullYear()} ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()} CET`;
+  //});
 
   return (
     <div className="filter-dropdowns">
-      <select
-        name="genre"
-        className="genre"
-        id="mySelect"
-        onChange={handleDropdownChange}
-      >
-        {dates.map((date) => (
-          <option key={date} value={date}>
-            {date}
-          </option>
-        ))}
+      <select name="date" id="mySelect" onChange={handleChangeDropdown}>
+        {data.map((date) => {
+          const d = new Date(date.created_at);
+          return (
+            <option key={date._id} value={date.created_at}>
+              {d.getDate()}/{d.getMonth() + 1}/{d.getFullYear()} {d.getHours()}:
+              {d.getMinutes()}:{d.getSeconds()} CET
+            </option>
+          );
+        })}
       </select>
     </div>
   );
