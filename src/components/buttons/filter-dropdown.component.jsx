@@ -3,7 +3,7 @@ import "./filter-dropdown.styles.css";
 import { DataContext } from "../../data/dataAPI";
 
 export default function FilterDropDownBtn() {
-  const { data, handleChangeDropdown, dateDropdown } = useContext(DataContext);
+  const { data, handleChangeDropdown } = useContext(DataContext);
   //const dates = data.map((date) => {
   //  const d = new Date(date.created_at);
   //  return `${d.getDate()}/${
