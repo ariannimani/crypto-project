@@ -13,6 +13,8 @@ export const DataProvider = ({ children }) => {
   const [searchValue, setSearchValue] = useState("");
   const [dateDropdown, setDateDropdown] = useState([]);
 
+  console.log(dateDropdown);
+
   const urlLink = "https://crypto-scrapper--app.herokuapp.com/crypto/today";
 
   async function getData() {
