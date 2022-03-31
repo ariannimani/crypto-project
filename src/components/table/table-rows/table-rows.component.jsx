@@ -11,6 +11,11 @@ export default function TableRows({ data, searchValue }) {
     )
     .map((coins) => (
       <tr key={coins._id}>
+        <td className="mobile-hidden">
+          <p className="align-middle text-center text-xs font-weight-bold mb-0">
+            {coins.rank}
+          </p>
+        </td>
         <td>
           <div className="d-flex px-2 py-1">
             <div>
@@ -38,9 +43,9 @@ export default function TableRows({ data, searchValue }) {
               : coins.current_price}
           </p>
         </td>
-        <td className="tablet-hidden mobile-hidden">
+        <td className="mobile-hidden">
           <p className="align-middle text-center text-xs font-weight-bold mb-0">
-            {coins.rank}
+            {coins.market_cap}
           </p>
         </td>
         <td className="align-middle text-center text-sm percentage-mobile">
@@ -64,11 +69,6 @@ export default function TableRows({ data, searchValue }) {
           >
             {coins.price_percentage_seven_days} %
           </span>
-        </td>
-        <td className="mobile-hidden">
-          <p className="align-middle text-center text-xs font-weight-bold mb-0">
-            {coins.market_cap}
-          </p>
         </td>
       </tr>
     ));

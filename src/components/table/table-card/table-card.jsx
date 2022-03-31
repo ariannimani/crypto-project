@@ -10,7 +10,7 @@ export default function TableCard({ title, data, searchValue }) {
         <div className="card mb-4">
           <div className="card-header pb-0">
             <h6>{title}</h6>
-            <FilterDropDownBtn></FilterDropDownBtn>
+            <FilterDropDownBtn />
           </div>
           <div className="card-body px-0 pt-0 pb-2">
             <div className="table-responsive p-0">
