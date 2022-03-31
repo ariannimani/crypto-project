@@ -1,5 +1,6 @@
 import React from "react";
 import "../table-item/table-item.styles.css";
+import "./table-rows.styles.css";
 
 export default function TableRows({ data, searchValue }) {
   return data
@@ -14,9 +15,8 @@ export default function TableRows({ data, searchValue }) {
           <div className="d-flex px-2 py-1">
             <div className="mobile-hidden">
               <img
-                src="./"
-                //src={require(coins.img.substring(0, coins.img.indexOf("?")))}
-                className="avatar avatar-sm me-3"
+                className="avatar avatar-sm me-3 img-size"
+                src={coins.img.substring(0, coins.img.indexOf("?"))}
                 alt={coins.short_name}
               />
             </div>
