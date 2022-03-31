@@ -65,6 +65,11 @@ export default function TableRows({ data, searchValue }) {
             {coins.price_percentage_seven_days} %
           </span>
         </td>
+        <td className="mobile-hidden">
+          <p className="align-middle text-center text-xs font-weight-bold mb-0">
+            {coins.market_cap}
+          </p>
+        </td>
       </tr>
     ));
 }

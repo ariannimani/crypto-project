@@ -10,4 +10,5 @@ select:not([multiple]) {
 
 #mySelect {
   border-radius: 0;
+  font-size: 12px;
 }

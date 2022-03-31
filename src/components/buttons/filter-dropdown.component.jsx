@@ -12,12 +12,16 @@ export default function FilterDropDownBtn() {
   //});
 
   return (
-    <div className="filter-dropdowns">
+    <div className="dropdown">
       <select name="date" id="mySelect" onChange={handleChangeDropdown}>
         {data.map((date) => {
           const d = new Date(date.created_at);
           return (
-            <option key={date._id} value={date.created_at}>
+            <option
+              className="dropdown-item"
+              key={date._id}
+              value={date.created_at}
+            >
               {d.getDate()}/{d.getMonth() + 1}/{d.getFullYear()} {d.getHours()}:
               {d.getMinutes()}:{d.getSeconds()} CET
             </option>

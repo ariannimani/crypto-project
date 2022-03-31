@@ -21,7 +21,9 @@ export default function TableItem() {
         <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
           7 Days
         </th>
-        <th className="text-secondary opacity-7"></th>
+        <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 mobile-hidden">
+          MarketCap
+        </th>
       </tr>
     </thead>
   );
