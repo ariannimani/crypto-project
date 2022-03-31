@@ -16,7 +16,8 @@ export default function TableRows({ data, searchValue }) {
             <div className="mobile-hidden">
               <img
                 className="avatar avatar-sm me-3 img-size"
-                src={coins.img.substring(0, coins.img.indexOf("?"))}
+                src="./"
+                //src={coins.img.substring(0, coins.img.indexOf("?"))}
                 alt={coins.short_name}
               />
             </div>
