@@ -13,9 +13,9 @@ export default function TableRows({ data, searchValue }) {
       <tr key={coins._id}>
         <td>
           <div className="d-flex px-2 py-1">
-            <div className="mobile-hidden">
+            <div>
               <img
-                className="avatar avatar-sm me-3 img-size"
+                className="avatar avatar-sm me-3 img-size mobile-small tablet-small"
                 src={coins.img.substring(0, coins.img.indexOf("?"))}
                 alt={coins.short_name}
               />
@@ -30,7 +30,7 @@ export default function TableRows({ data, searchValue }) {
             </div>
           </div>
         </td>
-        <td>
+        <td className="percentage-mobile">
           <p className="text-xs font-weight-bold mb-0">
             {window.innerWidth < 401
               ? "$" +
@@ -43,23 +43,23 @@ export default function TableRows({ data, searchValue }) {
             {coins.rank}
           </p>
         </td>
-        <td className="align-middle text-center text-sm">
+        <td className="align-middle text-center text-sm percentage-mobile">
           <span
             className={`badge badge-sm ${
               coins.price_percentage_one_day >= 0
-                ? "bg-gradient-success"
-                : "bg-gradient-danger"
+                ? "bg-gradient-success  "
+                : "bg-gradient-danger "
             }`}
           >
             {coins.price_percentage_one_day} %
           </span>
         </td>
-        <td className="align-middle text-center text-sm">
+        <td className="align-middle text-center text-sm percentage-mobile">
           <span
             className={`badge badge-sm ${
               coins.price_percentage_seven_days >= 0
-                ? "bg-gradient-success"
-                : "bg-gradient-danger"
+                ? "bg-gradient-success "
+                : "bg-gradient-danger "
             }`}
           >
             {coins.price_percentage_seven_days} %
