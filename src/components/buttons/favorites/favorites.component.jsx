@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { DataContext } from "../../../data/dataAPI";
+import "./favorites.styles.css";
 
 export default function FavoriteBtn({ coins }) {
   const { removeFavourites, addFavourites, favourites } =
