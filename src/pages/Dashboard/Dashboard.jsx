@@ -15,7 +15,6 @@ export default function Dashboard() {
     handleChange,
     addFavourites,
     favourites,
-    removeFavourites,
   } = useContext(DataContext);
 
   const navigate = useNavigate();
