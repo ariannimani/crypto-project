@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "./filter-dropdown.styles.css";
-import { DataContext } from "../../data/dataAPI";
+import { DataContext } from "../../../data/dataAPI";
 
 export default function FilterDropDownBtn() {
   const { data, handleChangeDropdown } = useContext(DataContext);

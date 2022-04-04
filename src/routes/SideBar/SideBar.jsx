@@ -30,6 +30,7 @@ const SideBar = () => {
         <ul className="navbar-nav">
           <SideItem page={"binance"} TableContent="Binance Coins" />
           <SideItem page={"kucoin"} TableContent="KuCoin Coins" />
+          <SideItem page={"favorites"} TableContent="Favorite Coins" />
         </ul>
       </div>
     </aside>

@@ -1,8 +1,9 @@
 import React from "react";
 import "../table-item/table-item.styles.css";
 import "./table-rows.styles.css";
+import FavoriteBtn from "../../buttons/favorites/favorites.component";
 
-export default function TableRows({ data, searchValue }) {
+export default function TableRows({ data, searchValue, addFavourites }) {
   return data
     .filter(
       (coin) =>
@@ -12,9 +13,10 @@ export default function TableRows({ data, searchValue }) {
     .map((coins) => (
       <tr key={coins._id}>
         <td className="mobile-hidden">
-          <p className="align-middle text-center text-xs font-weight-bold mb-0">
-            {coins.rank}
-          </p>
+          <div className="align-middle text-center text-xs font-weight-bold mb-0 text-flex">
+            <FavoriteBtn addFavourites={addFavourites} coins={coins} />
+            <div className="rank">{coins.rank}</div>
+          </div>
         </td>
         <td>
           <div className="d-flex px-2 py-1">

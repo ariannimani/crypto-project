@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./table-item.styles.css";
+import { DataContext } from "../../../data/dataAPI";
 
 export default function TableItem() {
+  const { handleSortChange } = useContext(DataContext);
   return (
     <thead>
       <tr>
@@ -11,7 +13,10 @@ export default function TableItem() {
         <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
           Name
         </th>
-        <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+        <th
+          className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
+          onClick={handleSortChange}
+        >
           Price
         </th>
         <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 mobile-hidden">

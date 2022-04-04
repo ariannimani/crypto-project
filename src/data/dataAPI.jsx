@@ -13,6 +13,8 @@ export const DataProvider = ({ children }) => {
   const [dataKuCoin, setDataKuCoin] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [dateDropdown, setDateDropdown] = useState();
+  const [sort, setSort] = useState(false);
+  const [favourites, setFavourites] = useState([]);
 
   const urlLink = "https://crypto-scrapper--app.herokuapp.com/crypto/today";
 
@@ -40,7 +42,8 @@ export const DataProvider = ({ children }) => {
 
   useEffect(() => {
     getData();
-  }, []);
+    console.log(favourites);
+  }, [favourites]);
 
   //useEffect(() => {
   //  if (data.created_at === dateDropdown) {
@@ -70,7 +73,7 @@ export const DataProvider = ({ children }) => {
       )
       .map((item) => item.kucoin_coins);
     setDataKuCoin(newKuCoin);
-  }, [data, dateDropdown]);
+  }, [data, dateDropdown, favourites]);
 
   const handleChange = (event) => {
     setSearchValue(event.target.value);
@@ -78,6 +81,27 @@ export const DataProvider = ({ children }) => {
 
   const handleChangeDropdown = (event) => {
     setDateDropdown(event.target.value);
+  };
+
+  const handleSortChange = () => {
+    const sorted = sort
+      ? dataBinance
+      : dataBinance.sort((a, b) => a.current_price - b.current_price);
+    setSort(sorted);
+  };
+
+  const addFavourites = (coins) => {
+    if (!favourites.map((item) => item._id).includes(coins._id)) {
+      const newFavouriteList = [...favourites, coins];
+      setFavourites(newFavouriteList);
+    }
+  };
+
+  const removeFavourites = (coins) => {
+    const newFavouriteList = favourites.filter(
+      (favourite) => favourite._id !== coins._id
+    );
+    setFavourites(newFavouriteList);
   };
 
   const value = {
@@ -88,6 +112,10 @@ export const DataProvider = ({ children }) => {
     handleChange,
     handleChangeDropdown,
     dateDropdown,
+    handleSortChange,
+    addFavourites,
+    removeFavourites,
+    favourites,
   };
 
   return <DataContext.Provider value={value}>{children}</DataContext.Provider>;
