@@ -42,8 +42,7 @@ export const DataProvider = ({ children }) => {
 
   useEffect(() => {
     getData();
-    console.log(favourites);
-  }, [favourites]);
+  }, []);
 
   //useEffect(() => {
   //  if (data.created_at === dateDropdown) {

@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../table-item/table-item.styles.css";
 import "./table-rows.styles.css";
 import FavoriteBtn from "../../buttons/favorites/favorites.component";
+import { DataContext } from "../../../data/dataAPI";
 
-export default function TableRows({ data, searchValue, addFavourites }) {
+export default function TableRows({ data }) {
+  const { searchValue } = useContext(DataContext);
   return data
     .filter(
       (coin) =>
@@ -14,7 +16,7 @@ export default function TableRows({ data, searchValue, addFavourites }) {
       <tr key={coins._id}>
         <td className="mobile-hidden">
           <div className="align-middle text-center text-xs font-weight-bold mb-0 text-flex">
-            <FavoriteBtn addFavourites={addFavourites} coins={coins} />
+            <FavoriteBtn coins={coins} />
             <div className="rank">{coins.rank}</div>
           </div>
         </td>

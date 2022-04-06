@@ -3,7 +3,7 @@ import FilterDropDownBtn from "../../buttons/filter-dropdown/filter-dropdown.com
 import TableItem from "../table-item/table-item.component";
 import TableRows from "../table-rows/table-rows.component";
 
-export default function TableCard({ title, data, searchValue }) {
+export default function TableCard({ title, data }) {
   return (
     <div className="row">
       <div className="col-12">
@@ -18,13 +18,7 @@ export default function TableCard({ title, data, searchValue }) {
                 <TableItem />
                 <tbody>
                   {data.map((data) => {
-                    return (
-                      <TableRows
-                        key={data}
-                        data={data}
-                        searchValue={searchValue}
-                      />
-                    );
+                    return <TableRows key={data} data={data} />;
                   })}
                 </tbody>
               </table>

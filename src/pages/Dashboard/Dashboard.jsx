@@ -8,14 +8,7 @@ import { DataContext } from "../../data/dataAPI";
 import FavoritesCard from "../../components/table/favorites-card/favorites-card.component";
 
 export default function Dashboard() {
-  const {
-    dataBinance,
-    dataKuCoin,
-    searchValue,
-    handleChange,
-    addFavourites,
-    favourites,
-  } = useContext(DataContext);
+  const { dataBinance, dataKuCoin, favourites } = useContext(DataContext);
 
   const navigate = useNavigate();
 
@@ -42,55 +35,30 @@ export default function Dashboard() {
         favoritePage={favoritePage}
       />
       <main className="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
-        <Navigation handleChange={handleChange} />
+        <Navigation />
 
         <div className="container-fluid py-4">
           <Routes>
             <Route
               exact
               path="/"
-              element={
-                <TableCard
-                  data={dataBinance}
-                  title="Binance Coins"
-                  searchValue={searchValue}
-                  addFavourites={addFavourites}
-                />
-              }
+              element={<TableCard data={dataBinance} title="Binance Coins" />}
             />
             <Route
               exact
               path="/binance"
-              element={
-                <TableCard
-                  data={dataBinance}
-                  title="Binance Coins"
-                  searchValue={searchValue}
-                  addFavourites={addFavourites}
-                />
-              }
+              element={<TableCard data={dataBinance} title="Binance Coins" />}
             />
             <Route
               exact
               path="/kucoin"
-              element={
-                <TableCard
-                  data={dataKuCoin}
-                  title="Kucoin Coins"
-                  searchValue={searchValue}
-                  addFavourites={addFavourites}
-                />
-              }
+              element={<TableCard data={dataKuCoin} title="Kucoin Coins" />}
             />
             <Route
               exact
               path="/favorites"
               element={
-                <FavoritesCard
-                  data={favourites}
-                  title="Favorite Coins"
-                  searchValue={searchValue}
-                />
+                <FavoritesCard data={favourites} title="Favorite Coins" />
               }
             />
           </Routes>
