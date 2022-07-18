@@ -16,7 +16,7 @@ export const DataProvider = ({ children }) => {
   const [sort, setSort] = useState(false);
   const [favourites, setFavourites] = useState([]);
 
-  const urlLink = "https://crypto-scrapper--app.herokuapp.com/crypto/today";
+  const urlLink = "https://crypto-scrapper--app.herokuapp.com/crypto/all";
 
   async function getData() {
     try {
@@ -31,7 +31,13 @@ export const DataProvider = ({ children }) => {
       }
       const result = await response.json();
       if (result) {
-        setData(result);
+        setData(
+          result.filter(
+            (da) =>
+              new Date(da.created_at) >
+              new Date().setDate(new Date().getDate() - 14)
+          )
+        );
       } else {
         console.log("error");
       }
